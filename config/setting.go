@@ -14,10 +14,10 @@ type Setting struct {
 func NewSetting() Setting {
 	return Setting{
 		Env:        util.MustGetEnv("ENV", "development"),
-		DBName:     util.MustGetEnv("DB_NAME", "go-grpc-server"),
+		DBName:     util.MustGetEnv("DB_NAME", "go_grpc_server"),
 		DBHost:     util.MustGetEnv("DB_HOST", "localhost"),
 		DBPort:     util.MustAtoi(util.MustGetEnv("DB_PORT", "3306")),
-		DBUser:     util.MustGetEnv("DB_USER", "some_user"),
+		DBUser:     util.MustGetEnv("DB_USER", "root"),
 		DBPassword: util.MustGetEnv("DB_PASSWORD", "1234"),
 	}
 }
