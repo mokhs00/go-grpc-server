@@ -13,3 +13,16 @@
 - Infra
   - CI/CD based on github-action
   - ...
+
+
+## directory structure
+
+``` 
+protos : protobuf
+gen : generated protobuf from protos/protobuf
+server : server
+  ⊢ handler
+  ⊢ db
+  ㄴ ...
+config : config
+```
