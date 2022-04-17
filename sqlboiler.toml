@@ -1,0 +1,28 @@
+# TODO : [#5] env 활용하도록 변경
+[mysql]
+  dbname = "go_grpc_server"
+  host = "localhost"
+  port = 3306
+  user = "root"
+  pass = "1234"
+  sslmode = "false"
+  blacklist = [
+      "content.created_at",
+      "content.updated_at",
+  ]
+
+
+# MySQL INTEGER can be represented in 32 bits.
+# See also https://dev.mysql.com/doc/refman/5.7/en/integer-types.html
+[[types]]
+[types.match]
+  type = "null.Int"
+  nullable = true
+[types.replace]
+  type = "null.Int32"
+
+[[types]]
+[types.match]
+  type = "int"
+[types.replace]
+  type = "int32"
