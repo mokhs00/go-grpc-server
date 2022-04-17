@@ -2,7 +2,10 @@ module go-grpc-server
 
 go 1.18
 
-require github.com/volatiletech/sqlboiler/v4 v4.10.2
+require (
+	github.com/mattn/go-sqlite3 v1.14.10
+	github.com/volatiletech/sqlboiler/v4 v4.10.2
+)
 
 require (
 	github.com/volatiletech/inflect v0.0.1 // indirect
