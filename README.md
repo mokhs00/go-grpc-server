@@ -17,12 +17,13 @@
 
 ## directory structure
 
-``` 
-protos : protobuf
-gen : generated protobuf from protos/protobuf
-server : server
-  ⊢ handler
-  ⊢ db
-  ㄴ ...
-config : config
+```
+[root]
+├─protos      # protobuf
+├─gen         # generated protobuf from protos/protobuf
+├─server      # server
+│  ├─handler  # request handler
+│  ├─db       # db
+│  └...
+└─config : config
 ```
