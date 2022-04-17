@@ -1,21 +1,37 @@
 package db
 
 import (
+	"context"
 	"database/sql"
+	"fmt"
 	"log"
+	"time"
 )
 
-// TODO : [#4] docker 세팅 후 mysql로 변경하며 커넥션 관련 개선
 type DBSetting struct {
-	FilePath string
+	Host     string
+	Port     int
+	User     string
+	Password string
+	Name     string
 }
 
-const driverName = "sqlite3"
+const driverName = "mysql"
 
 func MustGetDB(s DBSetting) *sql.DB {
-	db, err := sql.Open(driverName, s.FilePath)
+	db, err := sql.Open(driverName, fmt.Sprintf(
+		"%s:%s@tcp(%s:%d)/%s?parseTime=true", s.User, s.Password, s.Host, s.Port, s.Name),
+	)
 	if err != nil {
 		log.Fatalln("fail db open", err)
 	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
+	defer cancel()
+
+	if err = db.PingContext(ctx); err != nil {
+		log.Fatalln("fail db ping", err)
+	}
+
 	return db
 }
