@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package content;
+
+option go_package = "go-grpc-server/gen/go/v1/content";
+
+service Content {
+  rpc ListContent(ListContentRequest) returns (ListContentResponse){}
+}
+
+message ContentMessage {
+  string content_id = 1;
+  string title = 2;
+  string body = 3;
+}
+
+
+message ListContentRequest{
+}
+
+message ListContentResponse{
+  repeated ContentMessage contents = 1;
+}
