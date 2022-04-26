@@ -16,3 +16,12 @@ generate-db-models:
 	sqlboiler --templates ./server/db/templates \
 		--templates $$(go env GOPATH)/pkg/mod/github.com/volatiletech/sqlboiler/v4@v4.7.1/templates/main \
 		--wipe --no-tests --no-auto-timestamps -p mysql -o ./server/db/mysql mysql
+
+
+
+.PHONY: generate-proto
+# generate-proto : generate protobuf to go file
+generate-proto:
+	protoc --go_out . --go_opt paths=source_relative \
+		--go-grpc_out . --go-grpc_opt paths=source_relative \
+		protos/apis/**/**/*.proto
