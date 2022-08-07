@@ -5,7 +5,7 @@ package content;
 option go_package = "go-grpc-server/gen/go/v1/content";
 
 service Content {
-  rpc ListContent(ListContentRequest) returns (ListContentResponse){}
+  rpc ListContents(ListContentsRequest) returns (ListContentsResponse){}
 }
 
 message ContentMessage {
@@ -14,10 +14,9 @@ message ContentMessage {
   string body = 3;
 }
 
-
-message ListContentRequest{
+message ListContentsRequest{
 }
 
-message ListContentResponse{
+message ListContentsResponse{
   repeated ContentMessage contents = 1;
 }
