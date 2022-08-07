@@ -16,8 +16,8 @@ type ContentServer struct {
 	content.ContentServer
 }
 
-func (s *ContentServer) ListContent(ctx context.Context, req *content.ListContentRequest) (*content.ListContentResponse, error) {
-	return &content.ListContentResponse{Contents: []*content.ContentMessage{
+func (s *ContentServer) ListContent(ctx context.Context, req *content.ListContentsRequest) (*content.ListContentsResponse, error) {
+	return &content.ListContentsResponse{Contents: []*content.ContentMessage{
 		{
 			ContentId: "1",
 			Title:     "title",
