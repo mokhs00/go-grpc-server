@@ -4,7 +4,7 @@
 // - protoc             v3.21.4
 // source: protos/apis/v1/content/content.proto
 
-package content
+package go_grpc_server
 
 import (
 	context "context"

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package content;
 
-option go_package = "go-grpc-server/gen/go/v1/content";
+option go_package = "go-grpc-server/go_grpc_server";
 
 service Content {
   rpc ListContents(ListContentsRequest) returns (ListContentsResponse){}
