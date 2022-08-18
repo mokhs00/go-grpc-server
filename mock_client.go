@@ -36,24 +36,24 @@ func (m *MockContentClient) EXPECT() *MockContentClientMockRecorder {
 	return m.recorder
 }
 
-// ListContent mocks base method.
-func (m *MockContentClient) ListContent(ctx context.Context, in *go_grpc_server.ListContentRequest, opts ...grpc.CallOption) (*go_grpc_server.ListContentResponse, error) {
+// ListContents mocks base method.
+func (m *MockContentClient) ListContents(ctx context.Context, in *go_grpc_server.ListContentsRequest, opts ...grpc.CallOption) (*go_grpc_server.ListContentsResponse, error) {
 	m.ctrl.T.Helper()
 	varargs := []interface{}{ctx, in}
 	for _, a := range opts {
 		varargs = append(varargs, a)
 	}
-	ret := m.ctrl.Call(m, "ListContent", varargs...)
-	ret0, _ := ret[0].(*go_grpc_server.ListContentResponse)
+	ret := m.ctrl.Call(m, "ListContents", varargs...)
+	ret0, _ := ret[0].(*go_grpc_server.ListContentsResponse)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// ListContent indicates an expected call of ListContent.
-func (mr *MockContentClientMockRecorder) ListContent(ctx, in interface{}, opts ...interface{}) *gomock.Call {
+// ListContents indicates an expected call of ListContents.
+func (mr *MockContentClientMockRecorder) ListContents(ctx, in interface{}, opts ...interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	varargs := append([]interface{}{ctx, in}, opts...)
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListContent", reflect.TypeOf((*MockContentClient)(nil).ListContent), varargs...)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListContents", reflect.TypeOf((*MockContentClient)(nil).ListContents), varargs...)
 }
 
 // MockContentServer is a mock of ContentServer interface.
@@ -79,19 +79,19 @@ func (m *MockContentServer) EXPECT() *MockContentServerMockRecorder {
 	return m.recorder
 }
 
-// ListContent mocks base method.
-func (m *MockContentServer) ListContent(arg0 context.Context, arg1 *go_grpc_server.ListContentRequest) (*go_grpc_server.ListContentResponse, error) {
+// ListContents mocks base method.
+func (m *MockContentServer) ListContents(arg0 context.Context, arg1 *go_grpc_server.ListContentsRequest) (*go_grpc_server.ListContentsResponse, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "ListContent", arg0, arg1)
-	ret0, _ := ret[0].(*go_grpc_server.ListContentResponse)
+	ret := m.ctrl.Call(m, "ListContents", arg0, arg1)
+	ret0, _ := ret[0].(*go_grpc_server.ListContentsResponse)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// ListContent indicates an expected call of ListContent.
-func (mr *MockContentServerMockRecorder) ListContent(arg0, arg1 interface{}) *gomock.Call {
+// ListContents indicates an expected call of ListContents.
+func (mr *MockContentServerMockRecorder) ListContents(arg0, arg1 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListContent", reflect.TypeOf((*MockContentServer)(nil).ListContent), arg0, arg1)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "ListContents", reflect.TypeOf((*MockContentServer)(nil).ListContents), arg0, arg1)
 }
 
 // mustEmbedUnimplementedContentServer mocks base method.
